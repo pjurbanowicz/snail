@@ -1,0 +1,18 @@
+<?php 
+
+for($i=0;$i<$sizeROWS;$i++)
+{
+	?>
+	<div class="row row-centered">
+	<?php
+	for($j=0;$j<$sizeCOLS;$j++)
+		echo '<div class="col-xs-1 col-centered">'.$table[$i][$j].'</div>';
+	?>
+	</div>
+	<?php
+}
+echo '<br/>';
+
+echo '<div class="row row-centered"><div class="col-xs-12 col-centered">'.$snail.'</div></div>';
+
+?>

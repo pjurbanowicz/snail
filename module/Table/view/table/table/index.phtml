@@ -1,0 +1,28 @@
+
+ <?php
+ $form->setAttribute('action', $this->url('table', array('action' => 'edit')));
+ $form->prepare();
+
+
+ echo $this->form()->openTag($form);
+ ?>
+<div class="row row-centered">
+<div class="form-group col-xs-2 col-centered">
+	<?php echo $this->formLabel($form->get('sizeROWS')); ?>
+	<?php echo $this->formInput($form->get('sizeROWS')); ?>
+</div>
+</div>
+<div class="row row-centered">
+<div class="form-group col-xs-2 col-centered">
+	<?php echo $this->formLabel($form->get('sizeCOLS')); ?>
+	<?php echo $this->formInput($form->get('sizeCOLS')); ?>
+</div>
+</div>
+<div class="row row-centered">
+<div class="form-group col-xs-2 col-centered">
+	<?php echo $this->formInput($form->get('submit')); ?>
+</div>
+</div>
+	<?php
+ echo $this->form()->closeTag($form);
+?>

@@ -1,0 +1,32 @@
+ <?php
+ if(!isset($error))
+ {
+ $form->setAttribute('action', $this->url('table', array('action' => 'print')));
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+ 
+ 
+ echo $this->formRow($form->get('sizeROWS'));
+
+ echo $this->formRow($form->get('sizeCOLS'));
+ 
+ 
+ 
+ for($i=0;$i<$form->get('sizeROWS')->getValue();$i++)
+ { 
+	?>
+	<div class="row row-centered">
+	
+	<?php
+	for($j=0;$j<$form->get('sizeCOLS')->getValue();$j++)
+		echo '<div class="col-xs-1 col-centered">'.$this->formRow($form->get($i.'_'.$j)).'</div>';
+	?>
+	</div>
+	<?php
+ }
+?><div class="row row-centered"><div class="col-xs-1 col-centered"> <?php echo $this->formSubmit($form->get('submit')); ?></div></div> <?php
+ echo $this->form()->closeTag();
+ }
+ else echo '<div class="row row-centered">Prawidlowy zakres kolumn i wierszy to 1-50.</div>';
+?>
